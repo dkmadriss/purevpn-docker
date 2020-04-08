@@ -6,6 +6,7 @@ RUN apt-get update \
   && dpkg -i purevpn_amd64.deb
 
 ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/bin/bash"]
