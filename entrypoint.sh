@@ -8,7 +8,7 @@ if ! which purevpn > /dev/null; then
     exit 2
 fi
 
-ORIG_IP=$(curl -s 'icanhazip.com')
+ORIG_IP=$(curl -s 'ifconfig.me')
 echo "Current IP: ${ORIG_IP}"
 
 # start purevpn service
@@ -41,7 +41,7 @@ echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 service purevpn restart
 
-NEW_IP=$(curl -s 'icanhazip.com')
+NEW_IP=$(curl -s 'ifconfig.me')
 echo "Original IP: ${ORIG_IP}"
 echo "New IP (${RANDOM_LOCATION}): ${NEW_IP}"
 
